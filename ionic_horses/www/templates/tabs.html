@@ -1,0 +1,60 @@
+﻿
+<!-- 
+  Create tabs with an icon and label, using the tabs-positive style. 
+  Each tab's child <ion-nav-view> directive will have its own 
+  navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-default">
+
+   
+
+
+  <!-- Pets Tab -->
+  <ion-tab title="عرض" icon="icon ion-plus" href="#/tab/NewOffer">
+    <ion-nav-view name="NewOffer-tab"></ion-nav-view>
+  </ion-tab>
+
+
+  <!-- Adopt Tab -->
+    <ion-tab title="عروض" icon="icon ion-search" href="#/tab/Offers">
+        <ion-nav-view name="Offers-tab"></ion-nav-view>
+    </ion-tab>
+
+
+    <ion-tab title="الرئيسية" icon="icon ion-home" href="#/tab/about">
+        <ion-nav-view name="about-tab"></ion-nav-view>
+    </ion-tab>
+
+  <!-- About Tab -->
+
+
+    <ion-tab title="طلب" icon="icon ion-plus" href="#/tab/pets">
+        <ion-nav-view name="pets-tab"></ion-nav-view>
+    </ion-tab>
+
+  <ion-tab title="طلب" icon="icon ion-search" href="#/tab/about">
+    <ion-nav-view name="about-tab"></ion-nav-view>
+  </ion-tab>
+
+    <ion-tab title="المستخدم" icon="icon ion-person" href="#/tab/login">
+        <ion-nav-view name="login-tab"></ion-nav-view>
+    </ion-tab>
+
+</ion-tabs>
+
+
+<!--<ion-tab title="عرض" icon="icon ion-home" href="#/tab/pets">
+    <ion-nav-view name="pets-tab"></ion-nav-view>
+</ion-tab>
+
+<ion-tab title="Adopt" icon="icon ion-heart" href="#/tab/adopt">
+    <ion-nav-view name="adopt-tab"></ion-nav-view>
+</ion-tab>
+
+<ion-tab title="About" icon="icon ion-search" href="#/tab/about">
+    <ion-nav-view name="about-tab"></ion-nav-view>
+</ion-tab>
+
+<ion-tab title="User" icon="icon ion-person" href="#/tab/login">
+    <ion-nav-view name="login-tab"></ion-nav-view>
+</ion-tab>-->

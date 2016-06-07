@@ -1,0 +1,206 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;
+}
+
+/* Portrait layout (default) */
+.app {
+    background:url(../img/newLogo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+/*h1 {
+    font-size:200%;
+    font-weight:bold;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+    font-family:'Arial';    
+    text-align:center;
+    background-color:lightgray;
+    color:#426cd4;
+    position: absolute;
+    top: 28%;
+    width: 95%;
+}*/
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+/*--------------------------Ahmed------------------------------------*/
+#navigation{
+	padding-top:10%;
+	padding-bottom:-5%;
+	}
+#logo{
+	/*margin-top: 25px;
+    padding-top: 25px;*/
+    background-image:  url("../img/newLogo1.png");
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:contain;
+	width:100%;
+	height:50%;
+	opacity:0.9;
+	}
+ .pane {
+     	/*background: url("../img/bg2.jpg") no-repeat center center ;*/  
+         
+         background-color:rgba(167, 167, 167, 0.14);
+
+	-webkit-background-size: cover;          
+    -moz-background-size: cover;         
+    -o-background-size: cover; 
+}
+.ui-page-bw, #Mpage,#OFFJobPage,#ONJobPage,#Fpage,#BehPage,#Ann,#maincats,#FpageAr,#OFFJobPageAr,#ONJobPageAr,#BehPageAr,#AnnAr,#maincatsAr{
+	/*background-position:center;
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	background-color: transparent;
+    background-color: #1f1f1f;*/
+	/*background-image: url("../img/bg3.png");*/
+	
+
+        	/*background: url("../img/bg2.jpg") no-repeat center center ;*/  
+        
+        
+	 /*background-size: 50% ;*/
+
+
+
+	-webkit-background-size: cover;          
+    -moz-background-size: cover;         
+    -o-background-size: cover; 
+	}
+
+
+#loginPage{	
+    background: url("../img/bg.jpg") no-repeat center center ;  
+	-webkit-background-size: cover;          
+    -moz-background-size: cover;         
+    -o-background-size: cover; 
+}
+
+
+#loginForm{
+     
+    top: 65%;
+    width: 90%;
+}
+/*.ui-page-bw,#ObjPage{	
+	background-image: url("../img/bg2.png"); 	
+	-webkit-background-size: initial;          
+    -moz-background-size: initial;         
+    -o-background-size: initial; 
+	}
+
+#Fpage,#OFFJobPage{	
+	background-image: url("../img/bg3.png"); 
+	-webkit-background-size: cover;          
+    -moz-background-size: cover;         
+    -o-background-size: cover; 
+	}*/
+.ui-page .ui-content .ui-listview {
+    white-space : normal;
+	}
+.ui-btn {
+     border: 1px solid #000;
+}
+ .RadioCenter {
+   text-align:center; 
+    width: 100%;   
+    padding: 5px;
+}

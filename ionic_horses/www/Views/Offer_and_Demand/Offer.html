@@ -1,0 +1,493 @@
+﻿<div class="ui-page-bw" data-role="page" style="width: 100%; height: 100%; ">
+
+    <div data-role="header" data-theme="b" style="height: 55px; z-index: 1; width:100%; position:fixed;">
+        <div style="background-color: #8f6251; height: 18px; "></div>
+        <div style=" background-color:black; height:38px;">
+            <a href="#/" style="height:30px; margin-top:16px;" data-direction="reverse" class="ui-btn ui-btn-right ui-corner-all ui-shadow ui-icon-home ui-btn-icon-right">الرئيسية</a>
+            <p style="text-align: center; color: #ffffff; font-size: x-large;">{{Offer_Demand}}</p>
+
+
+
+            <a href="#/main" id="Offer_Demand_back" style="height:30px; margin-top:16px;" data-direction="reverse" class="ui-btn ui-btn-left ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left">رجوع</a>
+
+        </div>
+    </div>
+    <div style="height:63px;">
+    </div>
+    <div data-role="page" id="Offer_Demand" style="text-align: center; color: #ffffff;">
+
+        <div class="login-form">
+            <div class="form-group">
+                <div id="new_offer_div1" ng-hide="new_offer_div1myCheck" class="my-show-hide-animation">
+                    <table style="width: 100%; color: #ffffff;font-weight:bold;">
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <p>
+                                    <select class="btn-round input_form form-control login-field " ng-model="toogle_horse_selectedItem" ng-change="toogle_horse_status()">
+
+                                        <option value="فرس">فرس</option>
+                                        <option value="حصان">حصان</option>
+                                    </select>
+                                </p>
+
+
+
+
+                                <div id="f_horse_status" style="text-align: center; transition: all linear 1.5s;" ng-hide="horse_status_Check" class="xdiv">
+
+                                    <table style="width:100%;">
+                                        <tr>
+                                            <td style="width: 40%; text-align: right;">
+                                                <label style="display:inline;">
+                                                    لقاح
+                                                    <input type="radio" ng-model="color.name" value="red">
+                                                </label>
+                                            </td>
+                                            <td style="width: 40%; text-align: center; ">
+                                                <label style="display:inline;">
+                                                    فاضية
+                                                    <input type="radio" ng-model="color.name" value="blue">
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+
+
+
+
+
+
+
+                                </div>
+                            </td>
+                            <td style="width: 10%; text-align: right;">    الجنس</td>
+                        </tr>
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <p>
+                                    <select class="btn-round input_form form-control login-field ">
+                                        <option ng-repeat="x in horses_types">{{x}}</option>
+                                    </select>
+                                </p>
+                            </td>
+                            <td style="width: 10%; text-align: right;">
+                                النوع
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <p>
+
+                                    <select class="btn-round input_form form-control login-field ">
+                                        <option ng-repeat="x in horses_colors">{{x}}</option>
+                                    </select>
+                                </p>
+                            </td>
+                            <td style="width: 10%; text-align: right;">
+                                اللون
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <p>
+                                    <select class="btn-round input_form form-control login-field ">
+                                        <option ng-repeat="x in horses_category">{{x}}</option>
+                                    </select>
+                                </p>
+                            </td>
+                            <td style="width: 10%; text-align: right;">
+                                الفئة
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <p>
+                                    <select class="btn-round input_form form-control login-field ">
+                                        <option ng-repeat="x in horses_ages">{{x}}</option>
+                                    </select>
+                                </p>
+                            </td>
+                            <td style="width: 10%; text-align: right;">
+                                العمر
+                            </td>
+                        </tr>
+
+
+
+                        <tr>
+                            <td style="width:90%;text-align:center;padding-bottom:10px;">
+
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td style=" text-align: center;">يوم</td>
+                                        <td style=" text-align: center;">شهر</td>
+                                        <td style=" text-align: center;">سنة</td>
+                                    </tr>
+                                    <tr>
+                                        <td style=" text-align: center;">
+                                            <select class="btn-round input_form form-control login-field " style="display:inline; width:80%;">
+                                                <option ng-repeat=" x in date_dayes">
+                                                    {{x}}
+                                                </option>
+                                            </select>
+                                        </td>
+                                        <td style=" text-align: center;">
+                                            <select class="btn-round input_form form-control login-field " style="display:inline; width:80%;">
+                                                <option ng-repeat=" x in date_months">
+                                                    {{x}}
+                                                </option>
+                                            </select>
+
+                                        </td>
+                                        <td style=" text-align: center;">
+                                            <select class="btn-round input_form form-control login-field " style="display:inline; width:80%;">
+                                                <option ng-repeat=" x in date_years">
+                                                    {{x}}
+                                                </option>
+                                            </select>
+                                        </td>
+                                    </tr>
+
+
+
+
+                                </table>
+
+                            </td>
+                            <td style="width: 10%; text-align: right;">
+                                تاريخ الميلاد
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <a ng-click="next_div('2')" class="btn btn-block btn-sm btn-success btn-round  btn-default btn_form  glyphicon glyphicon-hand-right"> التالي</a>
+
+                            </td>
+                            <td style="width:10%;text-align:right;">
+                                <p>
+                                    <!--<p> {{new_offer_div2myCheck}} </p>-->
+                                </p>
+                            </td>
+                        </tr>
+
+
+
+                    </table>
+                </div>
+                <div id="new_offer_div2" ng-hide="new_offer_div2myCheck" class="my-show-hide-animation">
+                    <table style="color: white;">
+
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <p>
+                                    <input id="DP2" type="text" placeholder="إسم الحصان" class="btn-round input_form form-control login-field " style="  width: 100%; " />
+                                </p>
+                            </td>
+                            <td style="width:10%;text-align:right;">
+                                <p>
+                                    الإسم
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <p>
+                                    <input type="text" placeholder="الأب" class=" btn-round input_form form-control login-field " style=" width: 100%; " />
+                                </p>
+                            </td>
+                            <td style="width:10%;text-align:right;">
+                                <p>
+                                    الأب
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <p>
+                                    <input type="text" placeholder="الأم" class="btn-round input_form form-control login-field " style=" width: 100%; " />
+                                </p>
+                            </td>
+                            <td style="width:10%;text-align:right;">
+                                <p>
+                                    الأم
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <p>
+                                    <input type="text" placeholder="العمر" class="btn-round input_form  form-control login-field " style=" width: 100%; " />
+                                </p>
+                            </td>
+                            <td style="width:10%;text-align:right;">
+                                <p>
+                                    العمر
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <p>
+                                    <input type="text" placeholder="الإرتفاع" class="btn-round input_form form-control login-field " style=" width: 100%; " />
+                                </p>
+                            </td>
+                            <td style="width:10%;text-align:right;">
+                                <p>
+                                    الإرتفاع
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <p>
+                                    <textarea placeholder="السلامة والعيوب" class="btn-round input_form form-control login-field " style=" width: 100%; " />
+                                </p>
+                            </td>
+                            <td style="width:10%;text-align:right;">
+                                <p>
+                                    السلامة والعيوب
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:50%;text-align:right;">
+
+
+                                <table style="width:100%;text-align:right;">
+                                    <tr>
+                                        <td style="width:50%;text-align:right;">
+                                            <a ng-click="prev_div('1')" class="btn btn-block btn-sm btn-success btn-round  btn-default btn_form glyphicon glyphicon-hand-left"> السابق </a>
+
+
+                                        </td>
+                                        <td style="width:50%;text-align:right;">
+
+                                            <a ng-click="next_div('3')" class="btn btn-block btn-sm btn-success btn-round  btn-default btn_form  glyphicon glyphicon-hand-right"> التالي</a>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                </table>
+
+
+
+
+
+
+                            </td>
+                            <td style="width:50%;text-align:right;"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="new_offer_div3" ng-hide="new_offer_div3myCheck" class="my-show-hide-animation">
+                    <table style="color: #ffffff;width:100%;">
+
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <p>
+                                    <input type="text" placeholder="السوم" class="btn-round input_form form-control login-field " style=" width: 100%; " />
+                                </p>
+                            </td>
+                            <td style="width:10%;text-align:right;">
+                                <p>
+                                    السوم
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <p>
+                                    <input type="text" placeholder="الحد" class="btn-round input_form form-control login-field " style=" width: 100%; " />
+                                </p>
+                            </td>
+                            <td style="width:10%;text-align:right;">
+                                <p>
+                                    الحد
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <p>
+                                    <input type="text" placeholder="الطبع" class="btn-round input_form form-control login-field " style=" width: 100%; " />
+                                </p>
+                            </td>
+                            <td style="width:10%;text-align:right;">
+                                <p>
+                                    الطبع
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <p>
+                                    <textarea placeholder="المميزات" class="btn-round input_form form-control login-field " style=" width: 100%; " />
+                                </p>
+                            </td>
+                            <td style="width:10%;text-align:right;">
+                                <p>
+                                    المميزات
+                                </p>
+                            </td>
+                        </tr>
+
+
+
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <p>
+                                    <select class="btn-round input_form form-control login-field ">
+                                        <option ng-repeat="x in horses_cities">{{x}}</option>
+                                    </select>
+                                </p>
+                            </td>
+                            <td style="width: 10%; text-align: right;">
+                                المدينة
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+                                <a href="#/map" class="glyphicon glyphicon-map-marker" style="color:red;font-weight:bold;"> تحديد علي الخريطة  </a>
+                            </td>
+                            <td style="width:10%;text-align:right;">
+                                <p>
+                                    :  الموقع
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:90%;text-align:right;">
+
+
+                                <table style="width:100%;text-align:right;">
+                                    <tr>
+                                        <td style="width:50%;text-align:right;">
+                                            <a ng-click="prev_div('2')" class="btn btn-block btn-sm btn-success btn-round  btn-default btn_form glyphicon glyphicon-hand-left"> السابق </a>
+
+
+                                        </td>
+                                        <td style="width:50%;text-align:right;">
+
+                                            <a ng-click="next_div('4')" class="btn btn-block btn-sm btn-success btn-round  btn-default btn_form glyphicon glyphicon-hand-right"> التالي </a>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td style="width:10%;text-align:right;">
+                                <p>
+                                    <!--<p> {{new_offer_div2myCheck}} </p>-->
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div id="new_offer_div4" ng-hide="new_offer_div4myCheck" class="my-show-hide-animation">
+                    <table style="color: #ffffff; width: 100%;">
+                        <tr>
+                            <td style="width:50%;text-align:center;height:40%;">
+                                <img id="upload_pic_pos_img_1" src="http://s1.ckeditor.com/sites/default/files/styles/plugin_logo/public/imageuploader/Add%20Image-100_0.png?itok=pTiKF6HI" alt="إضافة صورة" style="width: 120px; height: 120px;border:5px solid none; " ng-click="upload_pic_click('1')">
+                            </td>
+                            <td style="width: 50%; text-align: center; height: 40%;">
+                                <img id="upload_pic_pos_img_2" src="http://s1.ckeditor.com/sites/default/files/styles/plugin_logo/public/imageuploader/Add%20Image-100_0.png?itok=pTiKF6HI" alt="إضافة صورة" style="width: 120px; height: 120px; border: 5px solid none; " ng-click="upload_pic_click('2')">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 50%; text-align: center; height: 40%;">
+                                <img id="upload_pic_pos_img_3" src="http://s1.ckeditor.com/sites/default/files/styles/plugin_logo/public/imageuploader/Add%20Image-100_0.png?itok=pTiKF6HI" alt="إضافة صورة" style="width: 120px; height: 120px; border: 5px solid none; " ng-click="upload_pic_click('3')">
+                            </td>
+                            <td style="width: 50%; text-align: center; height: 40%;">
+                                <img id="upload_pic_pos_img_4" src="http://s1.ckeditor.com/sites/default/files/styles/plugin_logo/public/imageuploader/Add%20Image-100_0.png?itok=pTiKF6HI" alt="إضافة صورة" style="width: 120px; height: 120px; border: 5px solid none; " ng-click="upload_pic_click('4')">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 50%; text-align: center; height: 40%;">
+                                <img id="upload_pic_pos_img_5" src="http://s1.ckeditor.com/sites/default/files/styles/plugin_logo/public/imageuploader/Add%20Image-100_0.png?itok=pTiKF6HI" alt="إضافة صورة" style="width: 120px; height: 120px; border: 5px solid none; " ng-click="upload_pic_click('5')">
+                            </td>
+                            <td style="width: 50%; text-align: center; height: 40%;">
+                                <img src="https://mediacdn.shinywhitebox.com/images/isight-icon2x_wdbIykk.png" alt="إضافة فيديو" style="width: 120px; height: 120px; border: 5px solid none; " ng-click="upload_pic_click('6')">
+                            </td>
+                        </tr>
+
+
+
+
+
+
+
+                        <tr>
+                            <td style="width:50%;text-align:right;">
+                                <!--<button class="btn btn-primary btn-sm btn-block " style=" width:100%; " onclick="performClick('file_Upload_pic');"><span class='glyphicon glyphicon-open-file'></span>  &nbsp;&nbsp;&nbsp;    استعراض ملف كاد</button>-->
+                                <input type="file" id="file_Upload_pic" style="display:none;" onchange="upload_pic()" />
+                                <!--accept=".dwg"onchange="upload_pic()"-->
+                            </td>
+                            <td style="width:50%;text-align:right;"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:50%;text-align:right;">
+                                <a ng-click="prev_div('3')" class="btn btn-block btn-sm btn-success btn-round  btn-default btn_form glyphicon glyphicon-hand-left"> السابق </a>
+                            </td>
+                            <td style="width:50%;text-align:right;">
+                                <p style="padding-top:10px;">
+
+                                    <a ng-click="next_div('5')" class="btn btn-block btn-sm btn-success btn-round  btn-default btn_form glyphicon glyphicon-hand-right"> التالي </a>
+
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div id="new_offer_div5" ng-hide="new_offer_div5myCheck">
+                    <table style="color: #16a085; width: 100%;">
+
+                        <tr>
+                            <td style="width:50%;text-align:right;"></td>
+                            <td style="width:50%;text-align:right;"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:50%;text-align:right;"></td>
+                            <td style="width:50%;text-align:right;"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:50%;text-align:right;"></td>
+                            <td style="width:50%;text-align:right;"></td>
+                        </tr>
+
+
+
+
+
+
+
+
+                        <tr>
+                            <td style="width:50%;text-align:right;"></td>
+                            <td style="width:50%;text-align:right;"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:50%;text-align:right;">
+                                <a ng-click="prev_div('4')" class="btn btn-block btn-sm btn-success btn-round  btn-default btn_form glyphicon glyphicon-hand-left"> السابق </a>
+                            </td>
+                            <td style="width:50%;text-align:right;">
+                                <p style="padding-top:10px;">
+
+                                    <a ng-click="" class="btn btn-block btn-sm btn-success btn-round  btn-default btn_form glyphicon glyphicon-hand-right"> التالي </a>
+
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>

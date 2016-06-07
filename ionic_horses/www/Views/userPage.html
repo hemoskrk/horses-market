@@ -1,0 +1,61 @@
+﻿<div layout="column" layout-align="center" ng-cloak class="md-inline-form">
+    <md-content layout-padding>
+        <div>
+            <form name="userForm">
+                <div class="portlet box grey-gallery">
+                    <div class="portlet-title">
+                        <div class="caption" style="text-align: center">
+                            <span>{{userProfile}}</span>
+                        </div>
+                        <div class="tools">
+                            <a href="#/"><i class="fa fa-mail-reply" title="Back"></i></a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="table-responsive">
+                            <md-input-container class="md-block">
+                                <label>{{nameLbl}}</label>
+                                <input type="text" name="fullName" ng-model="FullName" ng-required="true" style="text-align: center" />
+                                <div ng-messages="userForm.fullName.$error" multiple md-auto-hide="false">
+                                    <div ng-message="required">{{RequiredMessage}}</div>
+                                </div>
+                            </md-input-container>
+
+                            <md-input-container class="md-block">
+                                <label>{{nidLbl}}</label>
+                                <input minlength="10" maxlength="10" required type="number" name="NatId" ng-model="NationID" style="text-align: center" />
+                                <div ng-messages="userForm.NatId.$error" multiple md-auto-hide="false">
+                                    <div ng-message="required">{{RequiredMessage}}</div>
+                                    <div ng-message="minlength">{{NationMinLength}}</div>
+                                    <div ng-message="maxlength">{{NationMaxlength}}</div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container class="md-block">
+                                <label>{{mobLbl}}</label>
+                                <input minlength="10" maxlength="10" required type="number" name="Mob" ng-model="Mobile" style="text-align: center" />
+                                <div ng-messages="userForm.Mob.$error" multiple md-auto-hide="false">
+                                    <div ng-message="required">{{RequiredMessage}}</div>
+                                    <div ng-message="minlength">{{MobileMinLength}}</div>
+                                    <div ng-message="maxlength">{{MobileMaxlength}}</div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container class="md-block">
+                                <label>{{emailLbl}}</label>
+                                <input required type="email" name="Email" ng-model="Email"
+                                       minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" style="text-align: center" />
+                                <div ng-messages="userForm.Email.$error" multiple md-auto-hide="false">
+                                    <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">{{EmailMessage}}</div>
+                                </div>
+                            </md-input-container>
+
+                            <div class="row" style="text-align: center">
+                                <md-button id="userSaveBtn" class="md-raised md-primary" ng-disabled="userForm.$invalid" ng-click="SaveUserProfile()">{{userSaveBtn}}</md-button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </md-content>
+</div>

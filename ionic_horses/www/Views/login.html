@@ -1,0 +1,71 @@
+﻿
+<ion-view title="تعريف المستخدم/ تسجيل الدخول">
+
+
+
+    <div id="loginPage" data-role="page" style="width: 100%; height: 100%; background-color: rgb(218, 218, 218);">
+        <header>
+            <div style="padding-bottom: 18px; background-color: #dbdbdb; "></div>
+
+        </header>
+
+
+        <div id="Div4" style="height:30%;">
+
+
+        </div>
+        <div data-role="content">
+            <div id="loginForm" style="width: 100%; padding-top: 20px; text-align: center;">
+                <!--<div data-role="fieldcontain" class="ui-hide-label" style="width:100%">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" class="btn-round" value="" placeholder="اسم المستخدم" style="text-align: right; width: 100%; background-color: Transparent;" />
+
+                </div>
+                <div data-role="fieldcontain" class="ui-hide-label" style="padding-top: 10px; padding-bottom: 20px;">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" class="btn-round" value="" placeholder="كلمة المرور" style="text-align: right; width: 100%; background-color: Transparent;" />
+
+                    load_anim_zoomIn
+
+                    </div>-->
+
+                <div class="login-form   " ng-hide="login_hide_for_animate">
+                    <div class="form-group {{load_anim_zoomIn}}">
+                        <input type="text" class="form-control login-field input_form " value="" placeholder="إسم المستخدم" id="login-name" required oninvalid="setCustomValidity('يجب إدخال اسم المستخدم')" oninput="  $('#login-name')[0].style.backgroundColor = 'white';    setCustomValidity(''); $('#login-error').hide();" />
+                        <label class="login-field-icon" for="login-name" style="top:0px;"><span class="glyphicon glyphicon-user"></span></label>
+                    </div>
+                    <div class="form-group {{load_anim_zoomIn}}">
+                        <input type="password" class="form-control login-field input_form" value="" placeholder="كلمة السر" id="login-pass" required oninvalid="setCustomValidity('يجب إدخال كلمة السر')" oninput=" $('#login-pass')[0].style.backgroundColor = 'white';     setCustomValidity('');$('#login-error').hide();" />
+                        <label class="login-field-icon fui-lock" for="login-pass" style="top:0px;"><span class="glyphicon glyphicon-lock"></span></label>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="login-field-icon fui-lock" id="login-error" style="color:red;font-weight:bold;display:none;">خطأ في اسم المستخدم أو كلمة المرور</label>
+                    </div>
+
+                    <!--<div class="modal-footer">
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="$('#login-pass').val(''); $('#login-name').val(''); $('#login-error').hide();">إلغاء</button>
+                        </div>
+                        <div class="col-sm-5">
+                        </div>
+                        <div class="col-sm-5">
+                            <input id="login_btn" type="button" onclick="Login({ UserName: $('#login-name').val(), PassWord: $('#login-pass').val() }, 'login')" class="btn btn-default" value="تسجيل الدخول" />
+                        </div>
+                    </div>-->
+
+                    <a href="#/main" data-transition="slide" class="btn btn-block btn-sm btn-success btn-round  btn-default btn_form {{load_anim_bounceIn}}"><i class="glyphicon sort-icon "></i>تسجيل الدخول</a>
+                    <button class="btn btn-block btn-sm btn-success btn-round  btn-default btn_form {{load_anim_bounceIn}}" type="button" onclick="login()" id="submitButton">تسجيل مستخدم جديد</button>
+                    <button class="btn btn-block btn-sm btn-success btn-round  btn-default btn_form {{load_anim_bounceIn}}" type="button" onclick="login()" id="submitButton">دخول زائر</button>
+                    <!--<label style="   font-size: small;  color:#760202; font-weight: bold">جميع الحقوق محفوظة©</label>-->
+                    <h4 style="color: black;"> جميع الحقوق محفوظة© </h4>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!--<button class="btn btn-block btn-sm btn-warning btn-round" type="button" onclick="login()" style="border: 2px solid #aa1f1f; background-color: Transparent; color: #aa1f1f; " id="submitButton">تسجيل الدخول</button>-->
+</ion-view>

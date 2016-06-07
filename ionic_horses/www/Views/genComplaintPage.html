@@ -1,0 +1,66 @@
+﻿<div layout="column" layout-align="center" ng-cloak class="md-inline-form">
+    <md-content layout-padding>
+        <div>
+            <form name="complaintForm">
+                <div class="portlet box grey-gallery">
+                    <div class="portlet-title">
+                        <div class="caption" style="text-align: center">
+                            <span>{{comPageHeder}}</span>
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse" data-original-title="" title="{{CEbtn}}" /></a>
+                            <a href="#/"><i class="fa fa-mail-reply" title="Back"></i></a>
+                        </div>
+                        
+                    </div>
+                    <div class="portlet-body">
+                        <div class="table-responsive">
+                            <md-input-container class="md-block">
+                                <label>{{comCatLbl}}</label>
+                                <md-select name="mainctg" style="text-align: center" data-ng-model="SelectedCategory" md-on-open="loadCategories()" data-ng-change="GetCubCategories()" style="min-width: 200px;" ng-required="true">
+                                    <md-option ng-value="category" ng-repeat="category in categories" ng-if="EnLang">{{category.EName}}</md-option>
+                                    <md-option ng-value="category" ng-repeat="category in categories" ng-if="!EnLang">{{category.Name}}</md-option>
+                                </md-select> 
+                                <div ng-messages="complaintForm.mainctg.$error" multiple md-auto-hide="false">
+                                    <div ng-message="required">{{RequiredMessage}}</div>
+                                </div>                               
+                            </md-input-container>
+                            <md-input-container class="md-block">
+                                <label>{{comSubCatLbl}}</label>
+                                <md-select name="subctg" style="text-align: center" ng-model="user" md-on-open="loadSubCategories()" style="min-width: 200px;" ng-required="true">
+                                    <md-option ng-value="subCategory" ng-repeat="subCategory in subCategories" ng-if="EnLang">{{subCategory.EName}}</md-option>
+                                    <md-option ng-value="subCategory" ng-repeat="subCategory in subCategories" ng-if="!EnLang">{{subCategory.Name}}</md-option>
+                                </md-select>
+                                <div ng-messages="complaintForm.subctg.$error" multiple md-auto-hide="false">
+                                    <div ng-message="required">{{RequiredMessage}}</div>
+                                </div>     
+                            </md-input-container>
+                            <md-input-container class="md-block">
+                                <label>{{compLctLbl}}</label>
+                                <input name="compLct" style="text-align: center" ng-model="complaintlocation" disabled style="cursor:not-allowed" ng-required="true">
+                                <md-icon md-svg-src="img/location-black.svg"></md-icon>
+                                <div ng-messages="complaintForm.compLct.$error" multiple md-auto-hide="false">
+                                    <div ng-message="required">{{RequiredMessage}}</div>
+                                </div>  
+                            </md-input-container>
+                            <md-input-container class="md-block">
+                                <label>{{compDsrLbl}}</label>
+                                <textarea name="compDsr" style="text-align: center" ng-model="complaintDescription" ng-required="true" columns="1" rows="5"></textarea>
+                                <md-icon md-svg-src="img/edit-black.svg" class="name"></md-icon>
+                                <div ng-messages="complaintForm.compDsr.$error" multiple md-auto-hide="false">
+                                    <div ng-message="required">{{RequiredMessage}}</div>
+                                </div>  
+                            </md-input-container>
+                            <div class="row" style="text-align: center">
+                                <md-button  class="md-raised md-primary" ng-disabled="complaintForm.$invalid" ng-click="SaveComplaint()">{{CompBtnVal}}</md-button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="map" style="width:100%;height:29%;"></div>  
+
+            </form>
+        </div>
+    </md-content>
+</div>

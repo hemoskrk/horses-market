@@ -1,0 +1,51 @@
+﻿<div layout="column" layout-align="center" ng-cloak class="md-inline-form">
+    <md-content layout-padding>
+        <div>
+            <form name="contactusForm">
+                <div class="portlet box grey-gallery">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <span >{{lblContactUsHeader}}</span>
+                        </div>
+                        <div class="tools">
+                            <a href="#/"><i class="fa fa-mail-reply" title="Back"></i></a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="table-responsive">
+                            <md-input-container class="md-block">
+                                <label>{{lblMessageTitle}}</label>
+                                <input type="text" name="txtMessageTitle" ng-model="MessageTitle" ng-required="true" style="text-align: center" />
+                                <div ng-messages="contactusForm.txtMessageTitle.$error" multiple md-auto-hide="false">
+                                    <div ng-message="required">{{RequiredMessage}}</div>
+                                </div>
+                            </md-input-container>
+
+                            <md-input-container class="md-block">
+                                <label>{{lblMessageType}}</label>
+                                <md-select name="MessageType" style="text-align: center" data-ng-model="SelectedType" md-on-open="loadMessageTypes()" style="min-width: 200px;" ng-required="true">
+                                    <md-option ng-repeat="type in MessageTypes">{{type}}</md-option>
+                                </md-select>
+                                <div ng-messages="contactusForm.MessageType.$error" multiple md-auto-hide="false">
+                                    <div ng-message="required">{{RequiredMessage}}</div>
+                                </div>
+                            </md-input-container>
+
+                            <md-input-container class="md-block">
+                                <label>{{lblMessageContent}}</label>
+                                <textarea style="text-align: center" name="MessageContent" ng-model="MessageContent" ng-required="true" columns="1" rows="5"></textarea>
+                                <div ng-messages="contactusForm.MessageContent.$error" multiple md-auto-hide="false">
+                                    <div ng-message="required">{{RequiredMessage}}</div>
+                                </div>
+                            </md-input-container>
+                            <div class="row" style="text-align: center">
+                                <md-button class="md-raised md-primary" ng-disabled="contactusForm.$invalid" ng-click="SendMessage()">{{btnSendFeedback}}</md-button>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </md-content>
+</div>
